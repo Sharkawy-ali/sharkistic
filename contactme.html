@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us - Sharkistic</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="icon" href="logo mark watermark.png" type="image/x-icon">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(to bottom, #ff4500, #ffcc00);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #dcdcdc;
+            padding: 1em 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5em;
+            color: #333;
+            margin-left: 5px;
+        }
+
+        .nav-links a {
+            margin: 0 1em;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .nav-links a:hover {
+            color: #ff4500;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #ffcc00; /* Change color on hover */
+        }
+
+        .sm{
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            display: inline;
+        }
+
+        #tinst{
+            position: absolute;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            margin-top: 50px;
+            margin-left: 685px;
+            align-items: center;
+        }
+
+        #inst{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-top: 90px;
+            margin-left: 750px;
+            align-items: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+                flex-direction: column; /* Stack links vertically */
+                width: 100%; /* Full width for better touch targets */
+            }
+
+            .nav-links a {
+                margin: 5px 0; /* Space between links */
+            }
+
+            .logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .logo h1 {
+                margin-left: 0;
+            }
+
+            /* Make the contact form smaller on smaller devices */
+            .contact-container {
+                max-width: 90%; /* Reduced max width */
+                padding: 15px; /* Reduced padding */
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                padding: 8px; /* Reduced padding for inputs */
+            }
+
+            button {
+                padding: 8px; /* Reduced padding for button */
+            }
+
+            #tinst{
+                position: absolute;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+                margin-top: 50px;
+                margin-left: 685px;
+                align-items: center;
+            }
+
+            #inst{
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin-top: 90px;
+                margin-left: 750px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo mark watermark.png" alt="Sharkawy Logo">
+            <h1>SHARKISTIC</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="contact.html">Contact Us</a> <!-- Ensure this links to the contact page -->
+        </div>
+    </nav>
+
+    <!-- Contact Form -->
+    <div class="contact-container">
+        <h2>Contact Me</h2>
+        <form action="https://formsubmit.co/sharkawycreations@gmail.com" method="POST"> <!-- Updated action -->
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject">
+            <textarea name="mesg" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+   <!--<div class="sm">
+        <p id="tinst">Follow us in instagram</p>
+        <a href="https://www.instagram.com/sharkawycreations?igsh=Zjh6OGxxeHQ4Mzhu"><img src="instagram.png" id="inst"></a>
+    </div>-->
+</body> 
+</html> 

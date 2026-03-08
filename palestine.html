@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Palestine - App Download</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo mark watermark.png" type="image/x-icon">
+    <style>
+        :root {
+            --palestine-red: #CE1126;
+            --palestine-green: #007A3D;
+            --palestine-black: #000000;
+            --palestine-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, var(--palestine-red), var(--palestine-green));
+            color: var(--palestine-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 100%;
+            backdrop-filter: blur(5px);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .arabic-title {
+            font-family: "Rakkas", serif;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--palestine-white);
+        }
+        
+        .app-info {
+            margin: 25px 0;
+            line-height: 1.6;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, var(--palestine-red), var(--palestine-green));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            text-decoration: none;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, var(--palestine-green), var(--palestine-red));
+        }
+        
+        .download-btn .en {
+            font-family: 'Tajawal', sans-serif;
+            margin-right: 10px;
+        }
+        
+        .download-btn .ar {
+            font-family: "Rakkas", serif;
+        }
+        
+        .back-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .back-btn:hover {
+            background-color: white;
+            color: var(--palestine-black);
+        }
+        
+        .flag-pattern {
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, 
+                var(--palestine-black) 0% 33.33%, 
+                var(--palestine-white) 33.33% 66.66%, 
+                var(--palestine-green) 66.66% 100%);
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 20px;
+            background-color: white;
+            padding: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .arabic-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-audio" autoplay loop>
+        <source src="plm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="container">
+        <img src="logo mark watermark.png" alt="Palestine App Icon" class="app-icon">
+        <h1>Free Palestine</h1>
+        <div class="arabic-title">فلسطين حرة</div>
+        
+        <div class="flag-pattern"></div>
+        
+        <div class="app-info">
+            <p>Download our app to stay updated with the latest news and support the Palestinian cause. <b>ONLY FOR ANDROID!</b></p>
+            <p>حمل تطبيقنا لتبقى على اطلاع بآخر الأختبار ومساندة القضية الفلسطينية <b>فقط للاندرويد </b></p>
+        </div>
+        
+        <a href="palestine.apk" class="download-btn">
+            <span class="en">Download</span>
+            <span class="ar">تنزيل</span>
+        </a>
+        
+        <button class="back-btn" onclick="window.history.back()">Back / رجوع</button>
+    </div>
+    
+    <script>
+        // Ensure audio plays on mobile devices
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('background-audio');
+            audio.play().catch(e => console.log('Audio play failed:', e));
+        }, { once: true });
+    </script>
+</body>
+</html>

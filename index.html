@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharkistic</title>
+    <link rel="icon" href="logo mark watermark.png" type="image/x-icon">
+    <style>/* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(to bottom, #ff4500, #ffcc00);
+            min-height: 100vh;
+        }
+        
+        /* Navbar */
+        /* Navbar */
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:#dcdcdc;
+            padding:1em 2em;
+            box-shadow:0 4px 8px rgba(0,0,0,0.2);
+        }
+        .logo{display:flex;align-items:center;}
+        .logo img{height:40px;margin-right:10px;}
+        .logo h1{font-size:1.5em;}
+        .nav-links a{
+            margin:0 1em;
+            text-decoration:none;
+            color:#333;
+            font-size:1.1em;
+        }
+        .nav-links a:hover{color:#ff4500;}
+        
+        /* Main Section */
+        .main-content {
+            text-align: center;
+            margin: 2em 0;
+        }
+        
+        .main-content h1 {
+            font-size: 3em;
+            color: white;
+            margin-bottom: 2em;
+        }
+        
+        /* Feature Grid */
+        .feature-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .feature-card {
+            background-color: #f4f4f9;
+            border-radius: 10px;
+            padding: 1.5em;
+            width: 250px;
+            margin: 1em;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card img {
+            max-height: 140px;
+            margin-bottom: 1em;
+            object-fit: contain;
+        }
+
+        #plfl{
+            height: 90px;
+            width: auto;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-bottom: 70px;
+        }
+
+        #cvlg{
+            height: 110px;
+            width: auto;
+            margin-top: 20px;
+            margin-bottom: 75px;
+        }
+
+        #SHlg{
+            height: 140px;
+            width: auto;
+            /*margin-top: 20px;*/
+            margin-bottom: 40px;
+        }
+
+        /* Specific Shark logo */
+        .feature-card .shark-logo {
+            width: 100%;
+            max-width: 100%; /* Ensure the image doesn't exceed its container */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensures the image fits without cropping */
+            margin-bottom: 1em;
+        }
+
+        .feature-card p {
+            font-size: 1.1em;
+            margin-bottom: 1em;
+            color: #333;
+        }
+        
+        /* Button Link Styling */
+        .button-link {
+            display: inline-block;
+            background-color: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button-link:hover {
+            background-color: #e63900;
+        }
+        
+        /* Course Section */
+        .course-section {
+            background-color: rgba(255, 255, 255, 0.575); /* Semi-transparent white */
+            padding: 2em;
+            margin: 2em auto; /* Center horizontally */
+            width: 90%; /* Adjust width as needed */
+            /*max-width: 1200px;*/ /* Optional: Set a max-width for larger screens */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px); /* Adds a subtle blur effect */
+        }
+
+        .course-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-image {
+            width: 30%;
+            height: 85%;
+        }
+
+        .course-image img {
+            max-width: 70%;
+            /*height: 10%;*/ /* 80% of the section height */
+            object-fit: contain; /* Ensures the image fits without cropping */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-details {
+            flex: 1;
+        }
+
+        .course-details h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 1em;
+        }
+
+        .course-description {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+        }
+
+        .course-details h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .course-details ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 1.5em;
+        }
+
+        .course-details ul li {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 0.5em;
+        }
+        
+        /* Vision Section */
+        .vision-section {
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 2em;
+            margin-top: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .vision-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: #333;
+        }
+        
+        .vision-section p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .feature-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        
+            .nav-links {
+                margin-top: 10px;
+            }
+        
+            .nav-links a {
+                margin: 5px 0;
+            }
+        
+            .logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .logo img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        
+            .logo h1 {
+                margin-left: 0;
+            }
+        
+            /* Course Section Responsive */
+            .course-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .course-image img {
+                max-width: 100%;
+                height: auto; /* Maintain aspect ratio */
+                max-height: 600px; /* Set a maximum height for smaller screens */
+            }
+        
+            .course-details {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .course-image {
+                width: 100%;
+            }
+
+            .course-image img {
+                width: 100%; /* Make the image take up the full width of its container */
+                height: auto; /* Maintain aspect ratio */
+                max-height: 900px; /* Set a maximum height for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo mark watermark.png" alt="Sharkawy Logo">
+            <h1>SHARKISTIC</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="contactme.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="main-content">
+        <h1>SHARKISTIC</h1>
+        <div class="feature-grid">
+            <!-- Feature Cards -->
+            <div class="feature-card">
+                <img src="palestine.jpeg" alt="Palestine App" id="plfl">
+                <p>Download Palestine App for Android</p>
+                <a href="palestine.html" class="button-link">Download</a>
+            </div>
+
+            <div class="feature-card">
+                <img src="sharknewlogo-01.png" alt="Custom NFC" class="shark-logo" id="SHlg">
+                <p>Get Your Own Customized NFC Products</p>
+                <a href="products.html" class="button-link">Buy</a>
+            </div>
+
+            <div class="feature-card">
+                <img src="CV.png" alt="CV" id="cvlg">
+                <p>View My portfolio</p>
+                <a href="https://www.figma.com/proto/8OdhG0F4MOG03J9CFQ0QeE/Sharkawy-Creations-Website?node-id=11-76&node-type=canvas&t=x3bvyIHNgP2ECY0E-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=14%3A112&show-proto-sidebar=1" class="button-link">View</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Section -->
+    <section class="course-section">
+        <div class="course-container">
+            <div class="course-image">
+                <picture>
+                    <!-- Default image for larger screens -->
+                    <source srcset="html_course_banner-01.jpg" media="(min-width: 768px)">
+                    <!-- Alternate image for smaller screens -->
+                    <source srcset="html_course_banner_landscape-01.jpg" media="(max-width: 767px)">
+                    <!-- Fallback image -->
+                    <img src="html_course_banner-01.jpg" alt="HTML Course">
+                </picture>
+            </div>
+            <div class="course-details">
+                <h2>Course: HTML Fundamentals</h2>
+                <p class="course-description">
+                    Master the fundamentals of HTML and build the foundation for creating stunning websites. This course is designed for beginners and aspiring web developers who want to learn how to structure web content effectively. By the end of this course, you'll be able to create responsive, well-structured web pages from scratch.
+                </p>
+                <h3>Course Content:</h3>
+                <ul>
+                    <li>Introduction to HTML</li>
+                    <li>Basic HTML Structure</li>
+                    <li>HTML Elements and Tags</li>
+                    <li>Lists and Tables</li>
+                    <li>Forms and Inputs</li>
+                    <li>Semantic HTML</li>
+                    <li>Multimedia Integration</li>
+                    <li>HTML Best Practices</li>
+                </ul>
+                <h3>Course Aims:</h3>
+                <ul>
+                    <li>Understand HTML Basics</li>
+                    <li>Build Real-World Projects</li>
+                    <li>Learn Semantic Markup</li>
+                    <li>Prepare for Advanced Web Development</li>
+                    <li>Develop Problem-Solving Skills</li>
+                </ul>
+                <a href="https://forms.gle/b3HazS6eF6cYFshT8" class="button-link">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <h2>Our Vision</h2>
+        <p>At Sharkistic, we aim to spread the NFC technology to be used in all daily uses. Our goal is to enhance connectivity, creativity, and innovation through technology, making it accessible and practical for everyone.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
